@@ -1,0 +1,26 @@
+{
+  "name": "angular-webpack-starter",
+  "version": "0.0.1",
+  "description": "A starter kit for Angular",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trotyl/angular-webpack-starter.git"
+  },
+  "keywords": [
+    "angular",
+    "webpack"
+  ],
+  "author": "Trotyl <trotyl@qq.com> (http://trotyl.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trotyl/angular-webpack-starter/issues"
+  },
+  "homepage": "https://github.com/trotyl/angular-webpack-starter#readme"
+}
