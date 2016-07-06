@@ -22,5 +22,20 @@
   "bugs": {
     "url": "https://github.com/trotyl/angular-webpack-starter/issues"
   },
-  "homepage": "https://github.com/trotyl/angular-webpack-starter#readme"
+  "homepage": "https://github.com/trotyl/angular-webpack-starter#readme",
+  "dependencies": {
+    "@angular/common": "^2.0.0-rc.4",
+    "@angular/compiler": "^2.0.0-rc.4",
+    "@angular/compiler-cli": "^0.4.1",
+    "@angular/core": "^2.0.0-rc.4",
+    "@angular/forms": "^0.2.0",
+    "@angular/http": "^2.0.0-rc.4",
+    "@angular/platform-browser": "^2.0.0-rc.4",
+    "@angular/platform-browser-dynamic": "^2.0.0-rc.4",
+    "@angular/platform-server": "^2.0.0-rc.4",
+    "@angular/router": "^3.0.0-beta.2",
+    "@reactivex/rxjs": "^5.0.0-beta.9",
+    "typescript": "^2.0.0-dev.20160706",
+    "zone.js": "^0.6.12"
+  }
 }
