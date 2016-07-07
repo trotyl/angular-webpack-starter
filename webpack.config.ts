@@ -1,42 +1,42 @@
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    context: __dirname,
+    context: `${__dirname}/src`,
     entry: {
-        main: './src/main.ts'
+        main: './main.ts',
+        polyfill: './polyfill.ts'
     },
     devServer: {
         compress: true,
         historyApiFallback: true,
-        hot: true,
-        inline: true,
         port: 3000,
     },
-    devtool: 'eval',
+    devtool: 'source-map',
     module: {
         loaders: [
-            { 
-                test: /\.ts$/, 
-                loader: `ts` 
-            }
+            { test: /\.ts$/, loader: `ts` }
         ]
     },
     output: {
         chunkFilename: '[id].bundle.js',
         filename: '[name].bundle.js',
-        path: './dist',
-        publicPath: '/'
+        path: './dist'
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'My App',
-            filename: 'index.html',
-            inject: 'body'
+            chunksSortMode: 'dependency',
+            template: 'index.html',
+            inject: 'body',
+            hash: true
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ['polyfill'].reverse()
         })
     ],
     resolve: {
         alias: {
-            rxjs: `@reactivex/rxjs/dist/es6`
+            rxjs: `@reactivex/rxjs/dist/cjs`
         },
         extensions: ['', '.ts', '.js']
     }
