@@ -85,5 +85,7 @@ jspm_packages
 
 ### User Config
 
+dist/
 src/**/*.js
 src/**/*.js.map
+typings/
