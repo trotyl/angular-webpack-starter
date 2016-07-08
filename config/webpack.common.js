@@ -1,6 +1,7 @@
 const { resolve } = require('path')
 const webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlPlugin = require('html-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     context: resolve(__dirname, '../src'),
@@ -17,7 +18,9 @@ module.exports = {
     devtool: 'source-map',
     module: {
         loaders: [
-            { test: /\.ts$/, loader: `ts` }
+            { test: /\.ts$/, loader: `ts` },
+            { test: /\.html$/, exclude: [/index\.html/], loader: `file` },
+            { test: /\.css$/, loader: `file` }
         ]
     },
     output: {
@@ -26,12 +29,15 @@ module.exports = {
         path: './dist'
     },
     plugins: [
-        new HtmlWebpackPlugin({
+        new HtmlPlugin({
             chunksSortMode: 'dependency',
             template: 'index.html',
             inject: 'body',
             hash: true
         }),
+        new CopyPlugin([{
+            from: `./assets`, to: `./assets`
+        }]),
         new webpack.optimize.CommonsChunkPlugin({
             name: ['polyfill', 'vendor'].reverse()
         }),
