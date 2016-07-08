@@ -1,8 +1,9 @@
+const { resolve } = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    context: `${__dirname}/src`,
+    context: resolve(__dirname, '../src'),
     entry: {
         main: './main.ts',
         polyfill: './polyfill.ts'
@@ -32,7 +33,8 @@ module.exports = {
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: ['polyfill'].reverse()
-        })
+        }),
+        new webpack.optimize.OccurrenceOrderPlugin(true)
     ],
     resolve: {
         alias: {
