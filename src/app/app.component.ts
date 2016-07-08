@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
     selectedHero: Hero
     
     constructor (
-        @Inject(HeroService) private heroService: HeroService
+        private heroService: HeroService
     ) { }
     
     ngOnInit () {
