@@ -6,7 +6,8 @@ module.exports = {
     context: resolve(__dirname, '../src'),
     entry: {
         main: './main.ts',
-        polyfill: './polyfill.ts'
+        polyfill: './polyfill.ts',
+        vendor: './vendor.ts'
     },
     devServer: {
         compress: true,
@@ -32,9 +33,12 @@ module.exports = {
             hash: true
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: ['polyfill'].reverse()
+            name: ['polyfill', 'vendor'].reverse()
         }),
-        new webpack.optimize.OccurrenceOrderPlugin(true)
+        new webpack.optimize.OccurrenceOrderPlugin(true),
+        new webpack.EnvironmentPlugin([
+            "NODE_ENV"
+        ])
     ],
     resolve: {
         alias: {

@@ -8,7 +8,10 @@ module.exports = webpackMerge(config, {
         new webpack.optimize.UglifyJsPlugin({
             beautify: false,
             mangle: { screw_ie8 : true },
-            compress: { screw_ie8: true },
+            compress: { 
+                screw_ie8: true,
+                warnings: false
+            },
             comments: false
         })
     ]
