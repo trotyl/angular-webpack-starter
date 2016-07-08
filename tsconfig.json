@@ -10,13 +10,16 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "paths": {
-      "rxjs/Observable": ["@reactivex/rxjs/dist/cjs/Observable"]
+      "rxjs/Observable": ["@reactivex/rxjs/dist/cjs/Observable"],
+      "rxjs/Subject": ["@reactivex/rxjs/dist/cjs/Subject"],
+      "rxjs/add/operator/toPromise": ["@reactivex/rxjs/dist/cjs/add/operator/toPromise"]
     },
     "removeComments": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "target": "es5"
+    "target": "es5",
+    "traceResolution": true
   },
   "exclude": [
     "node_modules"

@@ -4,6 +4,10 @@ const config = require('./webpack.common.js')
 
 module.exports = webpackMerge(config, {
     debug: false,
+    output: {
+        chunkFilename: '[id].bundle.min.js',
+        filename: '[name].bundle.min.js'
+    },
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
             beautify: false,
