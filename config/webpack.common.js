@@ -12,7 +12,7 @@ module.exports = {
     devServer: {
         compress: true,
         historyApiFallback: true,
-        port: 3000,
+        port: 3000
     },
     devtool: 'source-map',
     module: {
@@ -37,7 +37,7 @@ module.exports = {
         }),
         new webpack.optimize.OccurrenceOrderPlugin(true),
         new webpack.EnvironmentPlugin([
-            "NODE_ENV"
+            'NODE_ENV'
         ])
     ],
     resolve: {
