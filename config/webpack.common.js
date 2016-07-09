@@ -19,8 +19,8 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.ts$/, loader: `ts` },
-            { test: /\.html$/, exclude: [/index\.html/], loader: `file` },
-            { test: /\.css$/, loader: `file` }
+            { test: /\.html$/, exclude: [/index\.html/], loader: `file!extract!html` },
+            { test: /\.css$/, loader: `file!extract!css` }
         ]
     },
     output: {
