@@ -9,6 +9,7 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
+    "noImplicitThis": true,
     "paths": {
       "@angular/platform-browser-dynamic": ["@angular/platform-browser-dynamic/esm"],
       "rxjs/Observable": ["@reactivex/rxjs/dist/cjs/Observable"],
