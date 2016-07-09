@@ -1,6 +1,5 @@
 const { resolve } = require('path')
 const webpack = require('webpack')
-const HtmlPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
@@ -29,12 +28,6 @@ module.exports = {
         path: './dist'
     },
     plugins: [
-        new HtmlPlugin({
-            chunksSortMode: 'dependency',
-            template: 'index.html',
-            inject: 'body',
-            hash: true
-        }),
         new CopyPlugin([{
             from: `./assets`, to: `./assets`
         }]),
