@@ -4,12 +4,13 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": ["es2016", "dom"],
-    "module": "commonjs",
+    "module": "es2015",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "paths": {
+      "@angular/platform-browser-dynamic": ["@angular/platform-browser-dynamic/esm"],
       "rxjs/Observable": ["@reactivex/rxjs/dist/cjs/Observable"],
       "rxjs/Subject": ["@reactivex/rxjs/dist/cjs/Subject"],
       "rxjs/add/operator/toPromise": ["@reactivex/rxjs/dist/cjs/add/operator/toPromise"]

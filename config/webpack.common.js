@@ -6,8 +6,24 @@ module.exports = {
     context: resolve(__dirname, '../src'),
     entry: {
         main: './main.ts',
-        polyfill: './polyfill.ts',
-        vendor: './vendor.ts'
+        polyfill: [
+            'core-js/fn/reflect/define-metadata',
+            'core-js/fn/reflect/get-metadata',
+            'core-js/fn/reflect/get-own-metadata',
+            'core-js/fn/reflect/metadata',
+            'zone.js'
+        ],
+        vendor: [
+            '@angular/core',
+            '@angular/common',
+            '@angular/http',
+            '@angular/router',
+            '@angular/platform-browser-dynamic',
+            '@reactivex/rxjs/Observable',
+            '@reactivex/rxjs/Subject',
+            '@reactivex/rxjs/add/operator/toPromise',
+            'angular2-in-memory-web-api'
+        ]
     },
     devServer: {
         compress: true,
@@ -18,8 +34,8 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.ts$/, loader: `ts` },
-            { test: /\.html$/, exclude: [/index\.html/], loader: `file!extract!html` },
-            { test: /\.css$/, loader: `file!extract!css` }
+            { test: /\.component.html$/, loader: `file!extract!html` },
+            { test: /\.component.css$/, loader: `file!extract!css` }
         ]
     },
     output: {
@@ -41,7 +57,8 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            rxjs: `@reactivex/rxjs/dist/cjs`
+            '@reactivex/rxjs': `@reactivex/rxjs/dist/cjs`,
+            'rxjs': `@reactivex/rxjs/dist/cjs`
         },
         extensions: ['', '.ts', '.js']
     }
