@@ -11,12 +11,14 @@ import { InMemoryBackendService, SEED_DATA } from 'angular2-in-memory-web-api'
 import { InMemoryDataService } from './in-memory-data.service'
 
 import { AppComponent } from './app/app.component'
-import { APP_ROUTER_PROVIDERS } from './app/app.routes'
+import { APP_ROUTER_PROVIDERS } from './app/core/app.routes'
 
 const env = process.env.NODE_ENV || 'local'
 if (env !== 'local') {
     enableProdMode()
 }
+
+console.log(`App is starting in env: ${env}`)
 
 bootstrap(AppComponent, [
     APP_ROUTER_PROVIDERS,

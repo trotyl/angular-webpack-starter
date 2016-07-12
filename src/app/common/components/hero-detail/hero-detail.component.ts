@@ -2,8 +2,8 @@ import { Component, Input, Output, OnInit, OnDestroy, EventEmitter } from '@angu
 import { ActivatedRoute } from '@angular/router'
 import { Subscription } from '@reactivex/rxjs'
 
-import { Hero } from './hero'
-import { HeroService } from './hero.service'
+import { Hero } from '../../hero'
+import { HeroService } from '../../hero.service'
 
 interface IRouteParams {
     id: string
